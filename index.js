@@ -28,7 +28,7 @@ function authorize(linkedinAuthMgr, email, password, scope)
 		.type('input[name="session_key"]', email)
 		.type('input[name="session_password"]', password)
 		.click('input[name="authorize"]')
-		.wait(15000)
+		.wait(150000000)
 		.close();
 }
 
@@ -94,8 +94,8 @@ exports.linkedin = null;
  * @param handleResponse
  * Function to execute after opening connection to LinkedIn API.
  */
-exports.run = function(apiConfigFile, app, handleResponse) {
-	var apiConfig = require('jsonfile').readFileSync(apiConfigFile);
+exports.run = function(apiConfig, app, handleResponse) {
+	//var apiConfig = require('jsonfile').readFileSync(apiConfigFile); No quiero esto
 
 	var linkedinAuthMgr = require('node-linkedin')(apiConfig.apiKey, 
 		apiConfig.secret, apiConfig.callbackUrl);
