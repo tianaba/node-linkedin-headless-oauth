@@ -62,7 +62,7 @@ function acquireAccessToken(linkedinAuthMgr, app, route, handleResponse)
 				}
 				// Save connection to LinkedIn API.
 				exports.linkedin = linkedinAuthMgr.init(results.access_token);
-				exports linkedintoken = results.access_token;
+				exports.linkedintoken = results.access_token;
 				return handleResponse(req, res);
 			}
 		);
